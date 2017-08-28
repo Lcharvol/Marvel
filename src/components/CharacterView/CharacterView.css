@@ -11,9 +11,20 @@
 }
 .characterview_inner
 {
+    display: flex;
+    flex-direction: column;
     width:90%;
     min-height:50%;
     max-width:800px;
     background-color: white;
     z-index:15;
+}
+.close_button
+{
+    align-self: flex-end;
+    margin-right:15px;
+    margin-top:15px;
+    font-size:1.3em;
+    color:rgb(226,20,31);
+    cursor: pointer;
 }
