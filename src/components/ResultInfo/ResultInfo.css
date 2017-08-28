@@ -11,7 +11,19 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+.resultinfo_inner
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .characters_found
 {
   font-size:1.3em;
+}
+.info_icon
+{
+  font-size:1.4em;
+  color:rgb(226,20,31);
+  margin-right:10px;
 }
