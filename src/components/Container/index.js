@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { onlyUpdateForKeys } from 'recompose';
 import Character from '../Character';
 import './Container.css';
 
@@ -22,4 +23,6 @@ Container.propTypes = {
   loadCharacter: PropTypes.func.isRequired,
 }
 
-export default Container;
+const enhance = onlyUpdateForKeys(['characters'])
+
+export default enhance(Container);

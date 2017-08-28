@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Character.css';
 
 const Character = ({ character, toggleCharacter, loadCharacter }) => (
-  <div className="character_container" onClick={() => loadCharacter(character.id)}>
+  <div className="character_container" onClick={() => {loadCharacter(character.id, toggleCharacter)}}>
     <div className="shadow">
     <i className="fa fa-ellipsis-h icon" aria-hidden="true"></i>
     </div>

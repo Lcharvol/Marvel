@@ -10,11 +10,12 @@ import Resultinfo from '../ResultInfo';
 import { connect } from 'react-redux';
 import './App.css';
 
-const App = ({ characters, resultInfo, toggleCharacter, characterIsVisible, loadCharacter }) => (
+const App = ({ characters, character, resultInfo, toggleCharacter, characterIsVisible, loadCharacter }) => (
   <div className="App">
     {characterIsVisible &&
       <CharacterView
         toggleCharacter={toggleCharacter}
+        character={character}
       />
     }
     <Header />
@@ -31,6 +32,7 @@ const App = ({ characters, resultInfo, toggleCharacter, characterIsVisible, load
 
 App.propTypes = {
   characters: PropTypes.array.isRequired,
+  character: PropTypes.array.isRequired,
   resultInfo: PropTypes.object.isRequired,
   loadCharacter: PropTypes.func.isRequired,
 }
@@ -39,6 +41,7 @@ const actions = { loadCharacter };
 
 const mapStateToProps = state => ({
   characters: state.characters,
+  character: state.character,
   resultInfo: state.resultInfo,
 });
 

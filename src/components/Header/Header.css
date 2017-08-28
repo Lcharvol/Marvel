@@ -7,6 +7,7 @@
   height:170px;
   background-color: rgb(226,20,31);
   box-shadow: 0 1px 5px redß;
+  overflow: hidden;
 }
 .title
 {

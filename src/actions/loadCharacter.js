@@ -6,7 +6,7 @@ export const CHARACTERLOADED = 'CHARACTERLOADED';
 export const characterLoaded = (data) =>
   ({ type: CHARACTERLOADED, data });
 
-export const loadCharacter = characterId => (dispatch, getState) => {
+export const loadCharacter = (characterId, toggleCharacter )=> (dispatch, getState) => {
   const Hash = (time) => md5(`${time}${apikeyPrivate}${apikey}`);
   const ts = Math.round(new Date() / 1000);
   const body = {
@@ -18,5 +18,6 @@ export const loadCharacter = characterId => (dispatch, getState) => {
   requestJson({ method: 'get', url: `/v1/public/characters/${characterId}`, body })
   .then((data) => {
    dispatch(characterLoaded(data.data));
+   toggleCharacter();
   })
 }
