@@ -10,6 +10,9 @@
   background-image: url("https://developer.marvel.com/i/images/developers/docs-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  -moz-box-shadow:    0 0 5em rgba(25,25,25, 0.3);
+  -webkit-box-shadow: 0 0 5em rgba(25,25,25, 0.3);
+  box-shadow:          0 0 5em rgba(25,25,25, 0.3);
 }
 .resultinfo_inner
 {
