@@ -1,0 +1,12 @@
+.resultinfo_container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height:200px;
+  width:100%;
+  background-color:white;
+  background-image: url("https://developer.marvel.com/i/images/developers/docs-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
