@@ -7,10 +7,12 @@ import Resultinfo from '../ResultInfo';
 import { connect } from 'react-redux';
 import './App.css';
 
-const App = ({ characters }) => (
+const App = ({ characters, resultInfo }) => (
   <div className="App">
     <Header />
-    <Resultinfo />
+    <Resultinfo
+      resultInfo={resultInfo}
+    />
     <Container
       characters={characters}
     />
@@ -18,17 +20,15 @@ const App = ({ characters }) => (
 );
 
 App.propTypes = {
-  characters: PropTypes.array,
-}
-
-App.defaultPropTypes = {
-  characters: [],
+  characters: PropTypes.array.isRequired,
+  resultInfo: PropTypes.object.isRequired,
 }
 
 const actions = {};
 
 const mapStateToProps = state => ({
   characters: state.characters,
+  resultInfo: state.resultInfo,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);

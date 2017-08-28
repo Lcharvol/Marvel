@@ -1,12 +1,17 @@
 .resultinfo_container
 {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
   min-height:200px;
-  width:100%;
+  width:calc(100% - 60px);
+  padding-left:60px;
   background-color:white;
   background-image: url("https://developer.marvel.com/i/images/developers/docs-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
+}
+.characters_found
+{
+  font-size:1.3em;
 }

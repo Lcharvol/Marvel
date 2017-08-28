@@ -13,6 +13,7 @@ export const loadCharacters = () => (dispatch, getState) => {
     ts,
     apikey,
     hash: Hash(ts),
+    limit: 100,
   };
   requestJson({ method: 'get', url: '/v1/public/characters', body })
   .then((data) => {
