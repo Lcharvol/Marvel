@@ -25,9 +25,17 @@
   width:200px;
   position: relative;
 }
+.name_container
+{
+  display: flex;
+  flex:1;
+  justify-content: center;
+  align-items: center;
+}
 .name
 {
   position: relative;
+  margin:0;
 }
 .image_container
 {

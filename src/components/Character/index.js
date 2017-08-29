@@ -11,7 +11,9 @@ const Character = ({ character, toggleCharacter, loadCharacter }) => (
     <div className="image_container">
       <img className="avatar" alt="avatar" src ={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
     </div>
-    <p className="name">{character.name}</p>
+    <div className="name_container">
+      <p className="name">{character.name}</p>
+    </div>
   </div>
 );
 

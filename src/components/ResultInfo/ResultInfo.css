@@ -19,10 +19,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom:10px;
 }
 .characters_found
 {
   font-size:1.3em;
+  margin:0;
 }
 .info_icon
 {
