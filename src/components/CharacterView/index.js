@@ -22,7 +22,10 @@ const CharacterView = ({ character, toggleCharacter }) => {
                 </div>
                 <div className="character_container_main">
                   <div className="comics_container">
-                      <h1>Comics</h1>
+                      <div className="comic_title">
+                        <span className="pt-icon-standard pt-icon-book icon_comics" />
+                        <h2>Comics</h2>
+                      </div>
                       {map(comic => (
                           <p key={comic.name} className="comicname">{comic.name}</p>
                       ),character[0].comics.items)

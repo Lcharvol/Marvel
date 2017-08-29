@@ -119,7 +119,25 @@
   width:100%;
   min-height:100%;
   background-color:rgb(250,250,250);
-  -moz-box-shadow:    inset 0 0 5em rgba(25,25,25, 0.2);
-  -webkit-box-shadow: inset 0 0 5em rgba(25,25,25, 0.2);
-  box-shadow:         inset 0 0 5em rgba(25,25,25, 0.2);
+  -moz-box-shadow:    inset 0 0 3em rgba(25,25,25, 0.1);
+  -webkit-box-shadow: inset 0 0 3em rgba(25,25,25, 0.1);
+  box-shadow:         inset 0 0 3em rgba(25,25,25, 0.1);
+}
+.comic_title
+{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width:100%;
+  height:30px;
+}
+.comic_title > h2
+{
+  margin:0;
+  font-size:1.5em;
+  margin-left:10px;
+}
+.icon_comics
+{
+  color:reb(25,25,25);
 }
