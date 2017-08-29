@@ -3,7 +3,10 @@ import { CHARACTERLOADED } from '../actions/loadCharacter';
 const reducer = (state = [], action) => {
   switch (action.type) {
     case CHARACTERLOADED:
-      return action.data.results;
+      if (action.data) {
+        return action.data.results;
+      }
+      return [];
     default:
       return state;
   }

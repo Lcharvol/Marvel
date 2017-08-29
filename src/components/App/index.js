@@ -1,32 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
-import { compose, withHandlers, withState } from 'recompose';
-import { loadCharacter } from '../../actions/loadCharacter';
 import { loadCharacters } from '../../actions/loadCharacters';
 import Header from '../Header';
 import Container from '../Container';
-import CharacterView from '../CharacterView';
 import Resultinfo from '../ResultInfo';
 import { connect } from 'react-redux';
 import './App.css';
 
-const App = ({ characters, character, resultInfo, toggleCharacter, characterIsVisible, loadCharacter, loadCharacters }) => (
+const App = ({ characters, character, resultInfo, loadCharacters }) => (
   <div className="App">
-    {characterIsVisible &&
-      <CharacterView
-        toggleCharacter={toggleCharacter}
-        character={character}
-      />
-    }
     <Header />
     <Resultinfo
       resultInfo={resultInfo}
     />
     <Container
       characters={characters}
-      toggleCharacter={toggleCharacter}
-      loadCharacter={loadCharacter}
       loadCharacters={loadCharacters}
     />
   </div>
@@ -36,11 +25,10 @@ App.propTypes = {
   characters: PropTypes.array.isRequired,
   character: PropTypes.array.isRequired,
   resultInfo: PropTypes.object.isRequired,
-  loadCharacter: PropTypes.func.isRequired,
   loadCharacters: PropTypes.func.isRequired,
 }
 
-const actions = { loadCharacter, loadCharacters };
+const actions = { loadCharacters };
 
 const mapStateToProps = state => ({
   characters: state.characters,
@@ -50,10 +38,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-const enhance = compose(
-  connect(mapStateToProps, mapDispatchToProps),
-  withState('characterIsVisible', 'showCharacter', false),
-  withHandlers({ toggleCharacter: ({ showCharacter }) => () => showCharacter(characterIsVisible => !characterIsVisible) }),
-);
-
-export default enhance(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

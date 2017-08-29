@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router'
 import { onlyUpdateForKeys } from 'recompose';
 import InfiniteScroll from 'react-infinite-scroller';
 import { Spinner } from '@blueprintjs/core';
 import Character from '../Character';
 import './Container.css';
 
-const Container = ({ characters, toggleCharacter, loadCharacter, loadCharacters }) => (
+const Container = ({ characters, loadCharacters }) => (
   <InfiniteScroll
     pageStart={0}
     loadMore={() => loadCharacters(characters.length + 25)}
@@ -21,20 +22,17 @@ const Container = ({ characters, toggleCharacter, loadCharacter, loadCharacters 
     className="container"
   >
     {characters.map((character) =>
-      <Character
-        key={character.id}
-        character={character}
-        toggleCharacter={toggleCharacter}
-        loadCharacter={loadCharacter}
-      />
+      <Link key={character.id} to={`/characters/${character.id}`}>
+        <Character
+          character={character}
+        />
+      </Link>
     )}
   </InfiniteScroll>
 );
 
 Container.propTypes = {
   characters: PropTypes.array.isRequired,
-  toggleCharacter: PropTypes.func.isRequired,
-  loadCharacter: PropTypes.func.isRequired,
   loadCharacters: PropTypes.func.isRequired,
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
 import './index.css';
-import App from './components/App';
+import routes from './routes';
 import registerServiceWorker from './registerServiceWorker';
 import { loadCharacters } from './actions/loadCharacters';
 import configureStore from './store';
@@ -16,7 +17,10 @@ store.dispatch(loadCharacters(25));
 
 const root = (
   <Provider store={store}>
-      <App />
+    <Router
+      history={browserHistory}
+      routes={routes}
+    />
   </Provider>
 );
 
