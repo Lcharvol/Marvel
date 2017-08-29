@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { compose, withHandlers, withState } from 'recompose';
 import { loadCharacter } from '../../actions/loadCharacter';
+import { loadCharacters } from '../../actions/loadCharacters';
 import Header from '../Header';
 import Container from '../Container';
 import CharacterView from '../CharacterView';
@@ -10,7 +11,7 @@ import Resultinfo from '../ResultInfo';
 import { connect } from 'react-redux';
 import './App.css';
 
-const App = ({ characters, character, resultInfo, toggleCharacter, characterIsVisible, loadCharacter }) => (
+const App = ({ characters, character, resultInfo, toggleCharacter, characterIsVisible, loadCharacter, loadCharacters }) => (
   <div className="App">
     {characterIsVisible &&
       <CharacterView
@@ -26,6 +27,7 @@ const App = ({ characters, character, resultInfo, toggleCharacter, characterIsVi
       characters={characters}
       toggleCharacter={toggleCharacter}
       loadCharacter={loadCharacter}
+      loadCharacters={loadCharacters}
     />
   </div>
 );
@@ -35,9 +37,10 @@ App.propTypes = {
   character: PropTypes.array.isRequired,
   resultInfo: PropTypes.object.isRequired,
   loadCharacter: PropTypes.func.isRequired,
+  loadCharacters: PropTypes.func.isRequired,
 }
 
-const actions = { loadCharacter };
+const actions = { loadCharacter, loadCharacters };
 
 const mapStateToProps = state => ({
   characters: state.characters,

@@ -13,7 +13,6 @@ export const loadCharacter = (characterId, toggleCharacter )=> (dispatch, getSta
     ts,
     apikey,
     hash: Hash(ts),
-    limit: 100,
   };
   requestJson({ method: 'get', url: `/v1/public/characters/${characterId}`, body })
   .then((data) => {

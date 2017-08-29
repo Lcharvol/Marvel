@@ -12,7 +12,7 @@ const initialState = {
 
 const store = configureStore(initialState);
 
-store.dispatch(loadCharacters());
+store.dispatch(loadCharacters(25));
 
 const root = (
   <Provider store={store}>

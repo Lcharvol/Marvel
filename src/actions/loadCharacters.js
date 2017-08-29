@@ -8,12 +8,12 @@ export const charactersLoaded = (data) =>
 
 const Hash = (time) => md5(`${time}${apikeyPrivate}${apikey}`);
 const ts = Math.round(new Date() / 1000);
-export const loadCharacters = () => (dispatch, getState) => {
+export const loadCharacters = limit => (dispatch, getState) => {
   const body = {
     ts,
     apikey,
     hash: Hash(ts),
-    limit: 100,
+    limit,
   };
   requestJson({ method: 'get', url: '/v1/public/characters', body })
   .then((data) => {
