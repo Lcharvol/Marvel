@@ -4,7 +4,7 @@
   justify-content: flex-start;
   align-items: flex-end;
   min-height:200px;
-  width:calc(100% - 60px);
+  width:100%;
   padding-left:60px;
   background-color:white;
   background-image: url("https://developer.marvel.com/i/images/developers/docs-bg.jpg");

@@ -12,9 +12,10 @@ const CharacterView = ({ character, toggleCharacter }) => {
             <div className="characterview_inner">
                 <div className="characterview_header">
                     <i className="fa fa-times close_button" aria-hidden="true" onClick={() => toggleCharacter()}></i>
-                    <div>
+                    <div className="characterview_avatar_container">
                         <img className="characterview_avatar" alt="avatar" src ={`${character[0].thumbnail.path}.${character[0].thumbnail.extension}`} />
                     </div>
+                    <img className="characterview_header_background" alt="avatar" src ={`${character[0].thumbnail.path}.${character[0].thumbnail.extension}`} />
                 </div>
                 <div className="comics_container">
                     <h1>Comics</h1>

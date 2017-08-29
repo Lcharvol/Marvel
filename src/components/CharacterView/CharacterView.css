@@ -16,10 +16,12 @@
     align-items: flex-start;
     width:90%;
     height:80%;
+    border-radius:3px;
     max-width:800px;
     background-color: white;
     z-index:15;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 .close_button
 {
@@ -29,14 +31,24 @@
     font-size:1.3em;
     color:rgb(226,20,31);
     cursor: pointer;
+    z-index:14;
+}
+.characterview_avatar_container
+{
+  display: flex;
+  z-index:14;
+  width:130px;
+  height:130px;
+  margin-left:25px;
+  border-radius:500px;
+  overflow: hidden;
+  -moz-box-shadow:    0 0 5em rgba(25,25,25, 0.3);
+  -webkit-box-shadow: 0 0 5em rgba(25,25,25, 0.3);
+  box-shadow:          0 0 5em rgba(25,25,25, 0.3);
 }
 .characterview_avatar
 {
-    width:130px;
-    height:130px;
-    margin-left:25px;
-    border-radius:500px;
-    overflow: hidden;
+  width:100%;
 }
 .comics_container
 {
@@ -50,11 +62,23 @@
 .characterview_header
 {
     display: flex;
+    position: relative;
     width:100%;
     min-height:200px;
     background-color:rgb(243,243,243);
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    z-index:11;
+}
+.characterview_header_background
+{
+  position: absolute;
+  width:100%;
+  z-index:13;
+  opacity: 0.4;
+  align-self: center;
+  margin-top:-30%;
 }
 .comicname
 {
