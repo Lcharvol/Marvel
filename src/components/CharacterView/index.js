@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { loadCharacter } from '../../actions/loadCharacter';
+import { withRouter } from 'react-router'
 import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import { map } from 'ramda';
 import Header from '../Header';
 import './CharacterView.css';
@@ -92,4 +94,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterView);
+const enhance = compose(
+  withRouter,
+  connect(mapStateToProps, mapDispatchToProps),
+);
+
+export default enhance(CharacterView);
